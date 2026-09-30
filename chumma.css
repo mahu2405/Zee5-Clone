@@ -1,0 +1,33 @@
+body { background: #111; color: white; font-family: sans-serif; }
+.row { display: flex; gap: 40px; padding: 40px; overflow: hidden; }
+
+/* vertical card */
+.card {
+  position: relative;
+  flex: 0 0 300px;
+  height: 500px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(160deg, #e07a1f, #3b0d05);
+  transition: flex-basis 0.5s;
+}
+
+/* hover = horizontal card */
+.card:hover { flex-basis: 800px; }
+
+.card h3 { position: absolute; bottom: 20px; left: 20px; font-size: 36px; }
+
+/* the number: right side first */
+.rank {
+  position: absolute;
+  top: 10px;
+  left: calc(100% - 20px);
+  transform: translateX(-100%);
+  font-size: 140px;
+  font-weight: bold;
+  color: #8fc79f;
+  transition: 0.5s;
+}
+
+/* hover: goes to left side */
+.card:hover .rank { left: 20px; transform: none; }

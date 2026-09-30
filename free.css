@@ -1,0 +1,654 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+/* ---------------------------------------- nav ---------------------------------------- */
+nav {
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    background-color: rgba(255, 255, 255, 0);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 60px;
+}
+
+/* logo dropdown + nav links ore row */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* ---------------------------------------- dropdown ---------------------------------------- */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: transparent;
+    color: white;
+    padding: 10px;
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+}
+
+.div1 {
+    display: flex;
+}
+
+.logo {
+    height: 30px;
+    width: 30px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    min-width: 200px;
+    background-color: rgba(20, 20, 20, 0.95);
+    padding-bottom: 12px;
+    border-radius: 8px;
+}
+
+.dropdown-content a {
+    color: white;
+    padding-top: 12px;
+    padding-left: 40px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: gray;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* ---------------------------------------- nav links ---------------------------------------- */
+.freeli {
+    list-style-type: none;
+    display: flex;
+    gap: 32px;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.freeli li {
+    cursor: pointer;
+}
+
+.freeli li:hover {
+    color: #ccc;
+}
+
+/* ---------------------------------------- right side ---------------------------------------- */
+.left {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.b1 {
+    background-color: transparent;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    height: 30px;
+    width: 100px;
+    border: 1px solid white;
+    backdrop-filter: blur(15px);
+    cursor: pointer;
+}
+
+.lens,
+.user {
+    color: white;
+    font-size: 22px;
+}
+/* -----------------------------------------------------hero-------------------- */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 800px;
+    overflow: hidden;
+    background-color: #111;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+/* RADIO BUTTONS HIDE */
+.hero input[type="radio"] {
+    display: none;
+}
+
+/* EACH SLIDE */
+.slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.6s ease;
+}
+
+/* ACTIVE SLIDE (radio checked aana mattum kaattum) */
+#s1:checked ~ .slide1,
+#s2:checked ~ .slide2,
+#s3:checked ~ .slide3,
+#s4:checked ~ .slide4,
+#s5:checked ~ .slide5,
+#s6:checked ~ .slide6 {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 5;
+}
+
+/* BLUR BACKGROUND */
+.blur {
+    position: absolute;
+    inset: -40px;
+    background-size: cover;
+    background-position: center;
+    filter: blur(35px);
+    transform: scale(1.1);
+    opacity: 0.6;
+    z-index: 0;
+}
+
+/* MAIN POSTER */
+.poster {
+    position: absolute;
+    inset: 0;
+    width: 90%;
+    height: 65%;
+    object-fit: cover;
+    z-index: 1;
+    margin: auto;
+    border-radius: 20px;
+}
+.poison{
+    object-fit: fill;
+}
+
+
+/* DARK OVERLAY */
+.slide::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.9), transparent);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* CONTENT */
+.content {
+    position: absolute;
+    left: 200px;
+    bottom: 180px;
+    color: white;
+    z-index: 10;
+    width: 450px;
+}
+
+.content h1 {
+    font-size: 35px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.content ul {
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin-bottom: 20px;
+    list-style: none;
+    color: white;
+}
+
+.content p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: white;
+}
+
+.content button {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    background-color: white;
+    color: black;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* ARROWS (label) */
+.left-arrow,
+.right-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+    z-index: 20;
+    user-select: none;
+    padding: 10px;
+}
+
+.left-arrow {
+    left: 25px;
+}
+
+.right-arrow {
+    right: 25px;
+}
+
+.left-arrow:hover,
+.right-arrow:hover {
+    color: #ccc;
+}
+
+/* DOTS */
+.dots {
+    position: absolute;
+    bottom: 155px;
+    right: 7%;
+    display: flex;
+    gap: 8px;
+    z-index: 30;
+}
+
+.dots label {
+    width: 10px;
+    height: 10px;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* ACTIVE DOT (perusa aagum) */
+#s1:checked ~ .dots label:nth-child(1),
+#s2:checked ~ .dots label:nth-child(2),
+#s3:checked ~ .dots label:nth-child(3),
+#s4:checked ~ .dots label:nth-child(4),
+#s5:checked ~ .dots label:nth-child(5),
+#s6:checked ~ .dots label:nth-child(6) {
+    width: 24px;
+    background-color: white;
+}
+/* -----------------------------------------------------row2-------------------------------------------------------------- */
+.row1-title{
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 40px;
+}
+.Row{
+    display: flex;
+    scroll-snap-type: x mandatory;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    gap: 30px;
+    perspective: 1200px;
+    padding-top: 150px;     
+    margin-top: -150px;     
+    padding-bottom: 20px;
+    margin-left: 30px;
+}
+.posterR1:hover img{
+    height: 360px;
+    width: 260px;
+    transform: translateY(-40px) scale(1);
+    z-index: 20;
+    border-radius: 20px;
+}
+.movielist{
+    display: flex;
+    gap: 20px;
+}
+.posterR1{
+  width: 200px;
+  height: 320px;
+  /* flex: 0 0 200px; */
+  color: white;
+  transition: width 0.4s ease;
+}
+.posterR1 img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  transition: height 0.4s ease;
+  /* margin-left: 35px; */
+}
+.img2{
+  display: none;
+}
+.details{
+    height: 350px;
+    width: 300px;
+  max-height: 0;
+  overflow: hidden;
+  padding-left: 15px;
+  transition:  0.4s ease, padding 0.4s ease;
+  background-color: black;
+}
+/* hover: everything grows naturally downward, no absolute/transform */
+.posterR1:hover{
+  width: 260px;
+}
+.posterR1:hover img{
+  height: 360px;
+}
+.posterR1:hover .img1{
+  display: none;
+}
+.posterR1:hover .img2{
+  display: block;
+}
+.posterR1:hover .details{
+  max-height: 150px;
+  padding: 10px 5px;
+}
+.posterR1 .img2{
+  display: none !important;
+}
+
+.posterR1:hover .img2{
+  display: block !important;
+}
+
+.posterR1 .img1{
+  display: block;
+}
+.play{
+    height: 40px;
+    width: 40px;
+}
+.share{
+    height: 40px;
+    width: 40px; 
+    border: none;
+}
+/* -------------------------------------------------news----------------------------------- */
+.newsposter{
+    position: relative;
+    padding-left: 30px;
+}
+.dull{
+    opacity: 0.5;
+}
+.newsdetails{
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+}
+.newss{
+    color: white;
+}
+.newsimg{
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+}
+.newsrow{
+    display: flex;
+    gap: 30px;
+}
+.newsp{
+    color: white;
+    font-weight: bold;
+}
+.newsp2{
+    color: white;
+    opacity: 0.8;
+}
+.newsposter2:hover .newsimg1{
+    transform: scale(1.1);  
+}
+.newsposter2:hover .newsimg2{
+    transform: scale(1.1); 
+    opacity: 1; 
+}
+.newsimg2{
+    opacity: 0.5;
+    height: 150px;
+    width: 250px;
+    border-radius: 5px;
+}
+.newsimg1{
+    height: 150px;
+    width: 250px;
+    border-radius: 5px;
+    opacity: 1;
+}
+.newsrow2{
+    display: flex;
+    gap: 15px;
+    padding-left: 30px;
+}
+/* ------------------------------------------footer-------------------------- */
+footer{
+    font-size: 13px;
+}
+.footer{
+    background-color: rgba(0, 0, 0, 0.675);
+    border-top: 1px solid grey;
+    width: 100%;
+    opacity: 0.3;
+    display: flex;
+    
+}
+.footer1{
+    display: flex;
+    gap: 20px;
+}
+.bp{
+    color: white;
+    padding-left: 150px;
+    
+}
+.line1{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+}
+.footerimg{
+    opacity: 1;
+    height: 30px;
+    width: 70px;
+}
+.footer2{
+    color: white;
+    font-size: 13px;
+    padding: 15px;
+}
+.para{
+    display: flex;
+    gap: 20px;
+}
+.para span{
+    display: flex;
+}
+.line2 p{
+    color: white;
+}
+.line2 span{
+    color: white;
+}
+.line2{
+    display: flex;
+}
+.list{
+    color: white;
+    padding-left: 100px;
+    gap: 90px;
+}
+.list ul{
+    opacity:0.5;
+}
+ul{
+    line-height: 30px;
+    list-style-type: none;
+}
+.paragraph{
+    display: flex;
+    gap: 40px;
+    padding-left:150px ;
+    padding-bottom: 20px;
+}
+.freeli a{
+    text-decoration: none;
+    color: white;
+}
+/* ---------------------------mediaqueryy--------------------------------------- */
+
+/* =====================================================
+   MEDIA QUERIES - indha code-a unga CSS file-oda
+   KADAISIYA (end) la paste pannunga
+   ===================================================== */
+
+/* ---------- Large laptops (<= 1200px) ---------- */
+@media (max-width: 1200px) {
+    .navbar { padding: 10px 30px; }
+    .freeli { gap: 20px; font-size: 16px; }
+
+    .content { left: 100px; }
+
+    .paragraph { padding-left: 60px; }
+    .bp { padding-left: 60px; }
+    .list { padding-left: 50px; gap: 50px; }
+}
+
+/* ---------- Tablets (<= 992px) ---------- */
+@media (max-width: 992px) {
+    .navbar { padding: 10px 20px; }
+    .nav-left { gap: 15px; }
+    .freeli { gap: 14px; font-size: 14px; }
+    .b1 { width: 80px; padding: 4px 8px; }
+    .left { gap: 14px; }
+
+    .hero { height: 600px; }
+    .poster { width: 92%; height: 60%; }
+    .content { left: 60px; bottom: 110px; width: 60%; }
+    .content h1 { font-size: 28px; }
+    .dots { bottom: 90px; right: 5%; }
+
+    .row1-title { padding: 25px 20px; }
+    .Row { gap: 15px; padding-left: 10px; }
+    .posterR1 { width: 160px; height: 260px; flex-shrink: 0; }
+    .posterR1 img { margin-left: 0; }
+    .posterR1:hover { width: 200px; }
+    .posterR1:hover img { height: 300px; width: 100%; }
+
+    .newsimg { height: 220px; width: 220px; }
+    .newsrow { overflow-x: auto; gap: 20px; scrollbar-width: none; }
+    .newsrow2 { flex-wrap: wrap; }
+
+    .line1 { flex-direction: column; gap: 20px; }
+    .line2 { flex-wrap: wrap; gap: 15px; }
+    .list { padding-left: 20px; gap: 30px; }
+    .paragraph { padding-left: 20px; flex-wrap: wrap; gap: 20px; }
+    .bp { padding-left: 20px; }
+}
+
+/* ---------- Mobile landscape / large phones (<= 768px) ---------- */
+@media (max-width: 768px) {
+    .freeli { display: none; }          /* hamburger menu add pannina inga kaattalam */
+    .navbar { padding: 8px 15px; }
+    .dropbtn { width: auto; }
+    .lens, .user { font-size: 18px; }
+
+    .hero { height: 480px; }
+    .poster { width: 94%; height: 55%; border-radius: 12px; }
+    .content { left: 25px; bottom: 80px; width: 80%; }
+    .content h1 { font-size: 22px; margin-bottom: 10px; }
+    .content ul { gap: 10px; margin-bottom: 10px; font-size: 13px; flex-wrap: wrap; }
+    .content p { font-size: 13px; margin-bottom: 15px; }
+    .content button { padding: 10px 18px; font-size: 13px; }
+    .left-arrow, .right-arrow { font-size: 24px; padding: 5px; }
+    .left-arrow { left: 5px; }
+    .right-arrow { right: 5px; }
+    .dots { bottom: 40px; right: 50%; transform: translateX(50%); }
+
+    .posterR1 { width: 130px; height: 210px; }
+    .posterR1:hover { width: 160px; }
+    .posterR1:hover img { height: 240px; transform: translateY(-20px); }
+
+    .newsimg { height: 180px; width: 180px; }
+    .newsimg1, .newsimg2 { width: 200px; height: 120px; }
+    .newsposter { padding-left: 15px; }
+    .newsrow2 { padding-left: 15px; }
+
+    .footer2 { padding: 10px 15px; }
+    .para { flex-wrap: wrap; gap: 10px; }
+}
+
+/* ---------- Mobile (<= 576px) ---------- */
+@media (max-width: 576px) {
+    .logo { height: 24px; width: 24px; }
+    .b1 { width: 70px; height: 28px; font-size: 12px; }
+    .left { gap: 10px; }
+
+    .hero { height: 420px; }
+    .poster { height: 50%; }
+    .content { left: 15px; bottom: 70px; width: 90%; }
+    .content h1 { font-size: 18px; }
+    .content p {
+        font-size: 12px;
+        display: -webkit-box;
+        /* -webkit-line-clamp: 3; */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    .left-arrow, .right-arrow { display: none; }   /* touch swipe / dots use pannikalam */
+
+    .row1-title { padding: 15px; font-size: 16px; }
+    .posterR1 { width: 110px; height: 175px; }
+    /* mobile la hover illa, so grow effect-a off pannrom */
+    .posterR1:hover { width: 110px; }
+    .posterR1:hover img { height: 100%; transform: none; }
+    .posterR1:hover .details { max-height: 0; padding: 0; }
+
+    .newsimg { height: 150px; width: 150px; }
+    .newsdetails { left: 25px; bottom: 20px; font-size: 12px; }
+    .newsimg1, .newsimg2 { width: 160px; height: 100px; }
+
+    footer { font-size: 11px; }
+    .footerimg { height: 24px; width: 55px; }
+    .list ul { line-height: 24px; }
+    .line2 { flex-direction: column; }
+}

@@ -1,0 +1,425 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+body{
+    background: black;
+}
+a{
+    text-decoration: none;
+}
+ 
+/* ---------- NAV ---------- */
+nav{
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    background-color: transparent;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 999;
+}
+.left{
+    width: 22px;
+    height: 22px;
+    margin: 14px 15px;
+    cursor: pointer;
+}
+.logo{
+    height: 45px;
+    width: 45px;
+    margin: 5px 20px;
+    object-fit: contain;
+}
+ 
+/* ---------- BACKGROUND ---------- */
+.background{
+    height: 100vh;
+    width: 100%;
+    background-image: url(./img/subscribe1.jpeg);
+    background-size: 100% 100%;
+    position: relative;
+}
+ 
+.overall{
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 45%;
+    min-width: 480px;
+    background: black;
+    padding: 90px 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    scrollbar-width: none;    
+}
+.heading{
+    color: white;
+    margin-bottom: 30px;
+    margin-top: 40px;
+}
+ 
+/* ---------- MAIN PLAN BOX ---------- */
+.planbox{
+    width: 100%;
+    max-width: 570px;
+    background-color: #161616;
+    border-radius: 16px;
+    padding: 28px 30px;
+    color: white;
+    flex-shrink: 0;
+}
+.planbox > input{
+    display: none;            /* hide radio circles */
+}
+.plan-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.plan-logo{
+    height: 50px;
+    width: 150px;
+    object-fit: contain;
+    display: block;
+}
+.p1{
+    color: white;
+    margin-top: 15px;
+    font-size: 18px;
+    max-width: 300px;
+    line-height: 1.4;
+}
+.button1{
+    height: 38px;
+    width: 150px;
+    border-radius: 6px;
+    border: 1px solid grey;
+    background-color: transparent;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+}
+ 
+/* ---------- FEATURE ICONS ---------- */
+.features{
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0;
+    text-align: center;
+}
+.feature{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+}
+.feature svg{
+    width: 26px;
+    height: 26px;
+    fill: white;
+}
+.feature b{
+    font-weight: normal;
+}
+ 
+.dev{
+    display: none;
+}
+#d1:checked  ~ .features .dev1,
+#d3:checked  ~ .features .dev2,
+#d12:checked ~ .features .dev3{
+    display: inline;
+}
+ 
+/* ---------- DURATION CARDS ---------- */
+.durations{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 30px;
+}
+.duration{
+    width: 150px;
+    height: 140px;
+    background: #2a2a2a;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #9a9a9a;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.duration .months{
+    font-size: 13px;
+}
+.duration .price{
+    font-size: 24px;
+    font-weight: bold;
+    color: #cfcfcf;
+}
+.duration .permonth{
+    font-size: 12px;
+}
+ 
+/* selected card */
+#d1:checked  ~ .durations label[for="d1"],
+#d3:checked  ~ .durations label[for="d3"],
+#d12:checked ~ .durations label[for="d12"]{
+    height: 180px;
+    background: #111;
+    border: 1px solid white;
+    color: white;
+}
+#d1:checked  ~ .durations label[for="d1"] .price,
+#d3:checked  ~ .durations label[for="d3"] .price,
+#d12:checked ~ .durations label[for="d12"] .price{
+    color: white;
+    font-size: 30px;
+}
+#d1:checked  ~ .durations label[for="d1"] .months,
+#d3:checked  ~ .durations label[for="d3"] .months,
+#d12:checked ~ .durations label[for="d12"] .months{
+    font-size: 15px;
+}
+ 
+/* ---------- CONTINUE BUTTON ---------- */
+.continue{
+    width: 100%;
+    height: 58px;
+    background: white;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.continue:hover{
+    background: #e6e6e6;
+}
+ 
+.overall::-webkit-scrollbar{
+    display: none;             
+}
+#viewall{
+    display: none;
+}
+.list{
+    width: 100%;
+    max-width: 570px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 12px;
+    flex-shrink: 0;
+}
+.extra{
+    display: none;             
+}
+#viewall:checked ~ .extra{
+    display: flex;
+}
+#viewall:checked ~ .viewall{
+    display: none;
+}
+.list-card{
+    background: linear-gradient(135deg, #1c1c1c, #111);
+    border-radius: 12px;
+    padding: 22px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 15px;
+    color: white;
+    transition: 0.2s;
+}
+.list-card:hover{
+    background: linear-gradient(135deg, #262626, #161616);
+}
+.list-logo{
+    height: 40px;
+    max-width: 150px;
+    object-fit: contain;
+    display: block;
+    margin-bottom: 10px;
+}
+.list-info p{
+    font-size: 13px;
+    max-width: 260px;
+    line-height: 1.4;
+}
+.list-price{
+    background: #000;
+    border-radius: 8px;
+    padding: 10px 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+.list-price strong{
+    font-size: 15px;
+}
+.list-price small{
+    font-size: 11px;
+}
+ 
+/* ---------- VIEW ALL PLANS BUTTON ---------- */
+.viewall{
+    width: 100%;
+    max-width: 570px;
+    height: 50px;
+    margin-top: 15px;
+    border: 1px solid #cfcfcf;
+    border-radius: 4px;
+    color: white;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+.viewall:hover{
+    background: #1c1c1c;
+}
+ 
+/* ---------- OFFERS + NOTE ---------- */
+.offers{
+    color: white;
+    margin: 25px 0 15px;
+    font-size: 15px;
+    flex-shrink: 0;
+}
+.tagicon{
+    width: 15px;
+    height: 15px;
+    fill: white;
+    vertical-align: -2px;
+    margin-right: 4px;
+}
+.offers:hover{
+    text-decoration: underline;
+}
+.note{
+    width: 100%;
+    max-width: 480px;
+    color: #cfcfcf;
+    font-size: 12px;
+    text-align: center;
+    line-height: 1.5;
+    padding-bottom: 30px;
+    flex-shrink: 0;
+}
+.note a{
+    color: white;
+    text-decoration: underline;
+}
+
+@media (max-width: 1200px) {
+    .overall { width: 50%; padding: 90px 30px 20px; }
+}
+
+/* ---------- Tablets (<= 992px) ---------- */
+@media (max-width: 992px) {
+    .background { background-size: cover; background-position: left center; }
+
+    .overall {
+        width: 60%;
+        min-width: 440px;
+        padding: 80px 25px 20px;
+    }
+
+    .planbox { padding: 24px 22px; }
+
+    .duration { width: auto; flex: 1; height: 130px; }
+    #d1:checked  ~ .durations label[for="d1"],
+    #d3:checked  ~ .durations label[for="d3"],
+    #d12:checked ~ .durations label[for="d12"] { height: 165px; }
+}
+
+/* ---------- Large phones (<= 768px) ---------- */
+@media (max-width: 768px) {
+    .overall {
+        width: 100%;
+        min-width: 0;
+        padding: 75px 20px 20px;
+    }
+
+    .logo { height: 38px; width: 38px; margin: 6px 15px; }
+    .left { margin: 14px 12px; }
+
+    .heading { font-size: 24px; margin: 20px 0 25px; text-align: center; }
+
+    .planbox, .list, .viewall { max-width: 100%; }
+    .note { max-width: 100%; }
+}
+
+/* ---------- Phones (<= 576px) ---------- */
+@media (max-width: 576px) {
+    .overall { padding: 70px 14px 20px; }
+
+    .heading { font-size: 20px; margin: 15px 0 20px; }
+
+    .planbox { padding: 20px 14px; border-radius: 12px; }
+    .plan-top { flex-wrap: wrap; gap: 12px; }
+    .plan-logo { height: 40px; width: 120px; }
+    .p1 { font-size: 15px; margin-top: 10px; max-width: 100%; }
+    .button1 { width: 120px; height: 34px; font-size: 13px; }
+
+    .features { margin: 22px 0; gap: 6px; }
+    .feature { font-size: 11px; gap: 6px; }
+    .feature svg { width: 22px; height: 22px; }
+
+    .durations { gap: 6px; margin-bottom: 22px; }
+    .duration { height: 110px; gap: 6px; }
+    .duration .months { font-size: 11px; }
+    .duration .price { font-size: 18px; }
+    .duration .permonth { font-size: 10px; }
+    #d1:checked  ~ .durations label[for="d1"],
+    #d3:checked  ~ .durations label[for="d3"],
+    #d12:checked ~ .durations label[for="d12"] { height: 140px; }
+    #d1:checked  ~ .durations label[for="d1"] .price,
+    #d3:checked  ~ .durations label[for="d3"] .price,
+    #d12:checked ~ .durations label[for="d12"] .price { font-size: 22px; }
+    #d1:checked  ~ .durations label[for="d1"] .months,
+    #d3:checked  ~ .durations label[for="d3"] .months,
+    #d12:checked ~ .durations label[for="d12"] .months { font-size: 12px; }
+
+    .continue { height: 50px; font-size: 17px; }
+
+    .list-card { padding: 16px 14px; flex-wrap: wrap; align-items: flex-start; }
+    .list-logo { height: 32px; }
+    .list-info p { max-width: 100%; }
+    .list-price { padding: 8px 12px; }
+
+    .viewall { height: 46px; font-size: 14px; }
+    .offers { font-size: 14px; }
+    .note { font-size: 11px; padding-bottom: 20px; }
+}
+
+/* ---------- Very small phones (<= 380px) ---------- */
+@media (max-width: 380px) {
+    .duration .price { font-size: 16px; }
+    .feature { font-size: 10px; }
+    .button1 { width: 100%; }
+}
+

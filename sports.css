@@ -1,0 +1,594 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+/* ---------------------------------------- nav ---------------------------------------- */
+nav {
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    background-color: rgba(255, 255, 255, 0);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 60px;
+}
+
+/* logo dropdown + nav links ore row */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* ---------------------------------------- dropdown ---------------------------------------- */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: transparent;
+    color: white;
+    padding: 10px;
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+}
+
+.div1 {
+    display: flex;
+}
+
+.logo {
+    height: 30px;
+    width: 30px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    min-width: 200px;
+    background-color: rgba(20, 20, 20, 0.95);
+    padding-bottom: 12px;
+    border-radius: 8px;
+}
+
+.dropdown-content a {
+    color: white;
+    padding-top: 12px;
+    padding-left: 40px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: gray;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* ---------------------------------------- right side ---------------------------------------- */
+.left {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.b1 {
+    background-color: transparent;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    height: 30px;
+    width: 100px;
+    border: 1px solid white;
+    backdrop-filter: blur(15px);
+    cursor: pointer;
+}
+
+.lens,
+.user {
+    color: white;
+    font-size: 22px;
+}
+.freeli a{
+    color: white;
+    text-decoration: none;
+}
+/* ------------------------------------------------------------herobanner--------------------------------- */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 700px;
+    overflow: hidden;
+    background-color: #111;
+}
+/* EACH SLIDE */
+/* BLUR BACKGROUND */
+.blur {
+    position: absolute;
+    inset: -40px;
+    background-size: cover;
+    background-position: center;
+    filter: blur(35px);
+    transform: scale(1.1);
+    opacity: 0.6;
+    z-index: 0;
+}
+/* MAIN POSTER */
+.poster {
+   position: absolute;
+    inset: 0;
+    width: 90%;
+    height: 65%;
+    /* object-fit: contain; */
+    z-index: 1;
+    margin: auto;
+    border-radius: 20px;
+
+}
+/* DARK OVERLAY */
+.slide::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.9),
+        transparent
+    );
+    z-index: 2;
+}
+/* CONTENT */
+.content {
+    position: absolute;
+    left: 200px;
+    bottom: 180px;
+    color: white;
+    z-index: 10;
+    width: 450px;
+}
+/* TITLE */
+.content h1 {
+    font-size: 35px;
+    margin-bottom: 20px;
+    color: white;
+}
+/* LIST */
+.content ul {
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin-bottom: 20px;
+    list-style: none;
+    color: white;
+}
+/* PARAGRAPH */
+.content p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: white;
+}
+/* BUTTON */
+.content button {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    background-color: white;
+    color: black;
+    font-size: 15px;
+    cursor: pointer;
+}
+/* ARROWS */
+.left-arrow,
+.right-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+    z-index: 20;
+}
+.left-arrow {
+    left: 25px;
+}
+.right-arrow {
+    right: 25px;
+}
+.slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: movieSlide 36s infinite;
+    overflow-x: auto ;
+    scrollbar-width: none;
+}
+/* Each movie */
+.slide1 {
+    animation-delay: 0s;
+}
+.slide2 {
+    animation-delay: 6s;
+}
+.slide3 {
+    animation-delay: 12s;
+}
+.slide4 {
+    animation-delay: 18s;
+}
+.slide5 {
+    animation-delay: 24s;
+}
+.slide6 {
+    animation-delay: 30s;
+}
+/* Animation */
+@keyframes movieSlide {
+    0% {
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    15% {
+        opacity: 1;
+    }
+    20% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+/* -------------------------------------------------------row----------------------------------------------------- */
+.row1-title{
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 30px;
+}
+.Row{
+    display: flex;
+    scroll-snap-type: x mandatory;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    gap: 30px;
+    perspective: 1200px;
+    padding-top: 150px;     
+    margin-top: -150px;     
+    padding-bottom: 20px;
+    margin-left: 30px;
+}
+.posterR1:hover img{
+    height: 360px;
+    width: 260px;
+    transform: translateY(-40px) scale(1);
+    z-index: 20;
+    border-radius: 20px;
+}
+.movielist{
+    display: flex;
+    gap: 20px;
+}
+.posterR1{
+  width: 200px;
+  height: 320px;
+  /* flex: 0 0 200px; */
+  color: white;
+  transition: width 0.4s ease;
+  
+}
+.posterR1 img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  transition: height 0.4s ease;
+  /* margin-left: 30px; */
+}
+.img2{
+  display: none;
+}
+.details{
+    height: 350px;
+    width: 300px;
+  max-height: 0;
+  overflow: hidden;
+  /* padding-left: 15px; */
+  transition:  0.4s ease, padding 0.4s ease;
+  background-color: rgb(0, 0, 0);
+}
+.posterR1:hover{
+  width: 260px;
+}
+.posterR1:hover img{
+  height: 360px;
+}
+.posterR1:hover .img1{
+  display: none;
+}
+.posterR1:hover .img2{
+  display: block;
+}
+.posterR1:hover .details{
+  max-height: 150px;
+  /* padding: 10px 5px; */
+}
+.posterR1 .img2{
+  display: none !important;
+}
+
+.posterR1:hover .img2{
+  display: block !important;
+}
+
+.posterR1 .img1{
+  display: block;
+}
+.play{
+    height: 40px;
+    width: 40px;
+}
+.share{
+    height: 40px;
+    width: 40px; 
+    border: none;
+}
+.overallrow{
+    margin-left: 30px;
+}
+.buttondiv{
+    display: flex;
+    gap: 30px;
+    margin: 10px;
+}
+.women{
+    height: 40px;
+    width: 120px;
+    background-color: transparent;
+    border: 1px solid gray;
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
+}
+.women:hover{
+    background-color: gray;
+}
+.imgdiv{
+    margin-top: 30px;
+}
+.newrowimg{
+    height: 250px;
+    width: 250px;
+    opacity:0.5;
+    border-radius: 20px;
+    
+}
+.newrowimg:hover{
+    opacity: 1;
+}
+.add{
+    height: 300px;
+    /* width: 100vb; */
+    background-image: url(./hi.jpg);
+    /* background-size: 1200px; */
+    background-repeat: no-repeat;
+    /* margin-left: 300px; */
+    border-radius: 10px;
+}
+/* ------------------------------------------------------------------------ */
+.language{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.715);
+    height: 50px;
+    width: 90px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+.section3{
+    height: 400px;
+    width: 100%;
+    background: linear-gradient(160deg, rgb(50, 1, 1) 0%, rgb(55, 1, 1) 10%, rgb(62, 1, 1) 20%, rgb(70, 1, 1) 30%, rgb(72, 1, 1) 40%, rgb(72, 1, 1) 100%);
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    
+}
+.sec3h3{
+    color: white;
+    width: 180px;
+    padding-left: 10px;
+}
+.section3div{
+    padding-left: 250px;
+}
+/* --------------------------------------------------------------------------------footer------------------------------------------------------------------------------------- */
+footer{
+    font-size: 13px;
+}
+.footer{
+    background-color: rgba(0, 0, 0, 0.675);
+    border-top: 1px solid grey;
+    width: 100%;
+    opacity: 0.3;
+    display: flex;
+    
+}
+.footer1{
+    display: flex;
+    gap: 20px;
+}
+.bp{
+    color: white;
+    padding-left: 150px;
+    
+}
+.line1{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+}
+.footerimg{
+    opacity: 1;
+    height: 30px;
+    width: 70px;
+}
+.footer2{
+    color: white;
+    font-size: 13px;
+    padding: 15px;
+}
+.para{
+    display: flex;
+    gap: 20px;
+}
+.para span{
+    display: flex;
+}
+.line2 p{
+    color: white;
+}
+.line2 span{
+    color: white;
+}
+.line2{
+    display: flex;
+}
+.list{
+    color: white;
+    padding-left: 100px;
+    gap: 90px;
+}
+.list ul{
+    opacity:0.5;
+}
+ul{
+    line-height: 30px;
+    /* list-style-type: none; */
+}
+.paragraph{
+    display: flex;
+    gap: 40px;
+    padding-left:150px ;
+    padding-bottom: 20px;
+}
+/* ------------------------------------------------------------------------- */
+
+
+/* ---------- Tablet (1024px and below) ---------- */
+@media (max-width: 1024px) {
+    .navbar { padding: 10px 30px; }
+    .nav-left { gap: 15px; }
+
+    .hero { height: 550px; }
+    .poster { width: 95%; height: 60%; }
+    .content { left: 60px; bottom: 120px; width: 350px; }
+    .content h1 { font-size: 28px; }
+
+    .section3div { padding-left: 100px; }
+
+    .bp { padding-left: 60px; }
+    .paragraph { padding-left: 60px; flex-wrap: wrap; }
+    .list { padding-left: 40px; }
+}
+
+/* ---------- Mobile (768px and below) ---------- */
+@media (max-width: 768px) {
+    /* nav */
+    .navbar { padding: 10px 15px; }
+    .dropbtn { width: auto; }
+    .left { gap: 12px; }
+    .b1 { width: 80px; padding: 4px 8px; font-size: 12px; }
+
+    /* hero banner */
+    .hero { height: 450px; }
+    .poster { width: 100%; height: 55%; border-radius: 0; }
+    .content { left: 20px; bottom: 50px; width: calc(100% - 40px); }
+    .content h1 { font-size: 22px; margin-bottom: 10px; }
+    .content ul { gap: 10px; font-size: 13px; margin-bottom: 10px; }
+    .content p { font-size: 14px; margin-bottom: 15px; }
+    .content button { padding: 10px 18px; }
+    .left-arrow, .right-arrow { display: none; }
+
+    /* movie rows (hover mobile-la illa, so normal size) */
+    .row1-title { padding: 15px; }
+    .Row { gap: 15px; margin-left: 15px; padding-top: 0; margin-top: 0; }
+    .posterR1 { width: 140px; height: 220px; }
+    .posterR1:hover { width: 140px; }
+    .posterR1:hover img { width: 100%; height: 100%; transform: none; }
+    .posterR1:hover .img1 { display: block !important; }
+    .posterR1:hover .img2 { display: none !important; }
+    .posterR1:hover .details { max-height: 0; }
+
+    .overallrow { margin-left: 15px; }
+    .buttondiv { gap: 10px; flex-wrap: wrap; }
+    .women { width: 90px; font-size: 16px; }
+    .newrowimg { height: 160px; width: 160px; }
+    .add { height: 180px; background-size: cover; background-position: center; }
+
+    /* red section */
+    .section3 { height: 300px; }
+    .sec3h3 { width: 120px; }
+    .section3div { padding-left: 20px; }
+
+    /* footer */
+    .footer { flex-direction: column; }
+    .footer1 { flex-wrap: wrap; gap: 10px; }
+    .bp { padding-left: 15px; }
+    .line1 { flex-direction: column; gap: 15px; padding: 20px 15px 0; }
+    .line2 { flex-direction: column; }
+    .list { padding-left: 15px; }
+    .paragraph { padding-left: 15px; flex-direction: column; gap: 10px; }
+    .para { flex-wrap: wrap; gap: 10px; }
+}
+
+/* ---------- Small mobile (480px and below) ---------- */
+@media (max-width: 480px) {
+    .hero { height: 380px; }
+    .content h1 { font-size: 18px; }
+    .content ul { display: none; }
+    .content p { font-size: 13px; }
+
+    .posterR1 { width: 120px; height: 190px; }
+    .posterR1:hover { width: 120px; }
+
+    .newrowimg { height: 130px; width: 130px; }
+    .add { height: 140px; }
+}

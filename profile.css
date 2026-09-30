@@ -1,0 +1,289 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+body{
+    background-color: black;
+}
+nav{
+     backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    background-color: rgba(255, 255, 255, 0);
+    height: 50px;
+    width: 100%;
+    /* background-color: rgb(0, 0, 0); */
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 999;
+}
+.left{
+    color: white;
+    font-size: 20px;
+    padding: 15px;
+}
+.img1{
+    height: 45px;
+    width: 45px;
+    margin: 5px;
+}
+span{
+    color: white;
+}
+.button1{
+    background-color: black;
+    height: 35px;
+    width: 35px;
+    border-radius: 10px;
+    border: 1px solid white;
+}
+.question{
+    color: white;
+    font-size: 15px;
+}
+.div1{
+    padding-left: 1030px;
+    padding-top: 10px;
+}
+.button1:hover{
+    background-color: grey;
+}
+.button2{
+    margin-left: 1000px;
+    margin-top: 30px;
+    height: 50px;
+    width: 170px;
+    border-radius: 5px;
+    font-weight: bolder;
+}
+.button2:hover{
+    background-color: gray;
+}
+.login{
+    position: relative;
+}
+.loginimage{
+    height: 200px;
+    width: 450px;
+    margin-left: 230px;
+    margin-top: 50px;
+    z-index: 1;
+}
+.login-content{
+    position: absolute;
+    left:250px;
+    top:100px;
+}
+.h2{
+    color: white;
+}
+.button3{
+    height: 40px;
+    width: 150px;
+    border-radius: 10px;
+    font-weight: bolder;
+    margin-top: 20px;
+}
+.button3:hover{
+    background-color: gray;
+}
+.h3{
+    color: white;
+    padding-left:270px;
+    padding-top: 30px;
+}
+.languages{
+    color: white;
+    display: flex;
+    gap: 10px;
+    padding-top: 30px;
+    overflow-x: scroll;
+    width: 1000px;
+    scrollbar-width: none;
+}
+.language{
+    flex-shrink: 0;
+    height: 100px;
+    width: 150px;
+    border-radius: 10px;
+    border: 1px solid white;
+    display: flex;
+   flex-direction: column;
+   gap: 10px;
+   justify-content: center;
+   align-items: center;
+    box-shadow: inset 5px 5px 24px rgba(255, 255, 255, 0.868);
+}
+.language:hover{
+    background-color: gray;
+    cursor: pointer;
+}
+.language:checked + .language{
+    background-color: rgb(98, 3, 3);
+    border: 2px solid white;
+    color: white;
+}
+.button4{
+    height: 40px;
+    width: 120px;
+    margin-left: 270px;
+    margin-top: 25px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+.button4:hover{
+    background-color: gray;
+}
+/* --------------------------------------------------------------------------------footer------------------------------------------------------------------------------------- */
+footer{
+    font-size: 13px;
+}
+.footer{
+    background-color: rgba(0, 0, 0, 0.675);
+    border-top: 1px solid grey;
+    width: 100%;
+    opacity: 0.3;
+    display: flex;
+    
+}
+.footer1{
+    display: flex;
+    gap: 20px;
+}
+.bp{
+    color: white;
+    padding-left: 150px;
+    
+}
+.line1{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+}
+.footerimg{
+    opacity: 1;
+    height: 30px;
+    width: 70px;
+}
+.footer2{
+    color: white;
+    font-size: 13px;
+    padding: 15px;
+}
+.para{
+    display: flex;
+    gap: 20px;
+}
+.para span{
+    display: flex;
+}
+.line2 p{
+    color: white;
+}
+.line2 span{
+    color: white;
+}
+.line2{
+    display: flex;
+}
+.list{
+    color: white;
+    padding-left: 100px;
+    gap: 90px;
+}
+.list ul{
+    opacity:0.5;
+}
+ul{
+    line-height: 30px;
+    list-style-type: none;
+}
+.paragraph{
+    display: flex;
+    gap: 40px;
+    padding-left:150px ;
+    padding-bottom: 20px;
+}
+/* -----------------------------------------mediaquery---------------------------------- */
+
+
+/* ---------- Laptops (<= 1200px) ---------- */
+@media (max-width: 1200px) {
+    .div1 { padding-left: 0; padding-right: 30px; text-align: right; }
+    .button2 { display: block; margin-left: auto; margin-right: 30px; }
+
+    .loginimage { margin-left: 100px; }
+    .login-content { left: 120px; }
+
+    .h3 { padding-left: 100px; }
+    .languages { width: calc(100% - 100px); margin-left: 100px; }
+    .button4 { margin-left: 100px; }
+
+    .bp { padding-left: 60px; }
+    .paragraph { padding-left: 60px; }
+    .list { padding-left: 50px; gap: 50px; }
+}
+
+/* ---------- Tablets (<= 992px) ---------- */
+@media (max-width: 992px) {
+    .loginimage { width: 400px; margin-left: 60px; }
+    .login-content { left: 80px; top: 90px; }
+
+    .h3 { padding-left: 60px; }
+    .languages { width: calc(100% - 60px); margin-left: 60px; }
+    .button4 { margin-left: 60px; }
+
+    .line1 { flex-direction: column; gap: 20px; }
+    .line2 { flex-wrap: wrap; gap: 15px; }
+    .list { padding-left: 20px; gap: 30px; }
+    .paragraph { padding-left: 20px; flex-wrap: wrap; gap: 20px; }
+    .bp { padding-left: 20px; }
+}
+
+/* ---------- Large phones (<= 768px) ---------- */
+@media (max-width: 768px) {
+    .left { font-size: 16px; padding: 15px 10px; }
+    .img1 { height: 38px; width: 38px; }
+
+    .div1 { padding-right: 15px; }
+    .button2 { margin-right: 15px; margin-top: 20px; height: 44px; width: 140px; }
+
+    .loginimage { width: 90%; height: 180px; margin-left: 5%; object-fit: cover; }
+    .login-content { left: 9%; top: 85px; }
+    .h2 { font-size: 20px; }
+    .button3 { height: 36px; width: 130px; margin-top: 12px; }
+
+    .h3 { padding-left: 5%; font-size: 20px; }
+    .languages { width: 90%; margin-left: 5%; padding-top: 20px; }
+    .language { width: 130px; height: 90px; }
+    .button4 { margin-left: 5%; margin-bottom: 30px; }
+
+    .footer2 { padding: 10px 15px; }
+    .para { flex-wrap: wrap; gap: 10px; }
+}
+
+/* ---------- Phones (<= 576px) ---------- */
+@media (max-width: 576px) {
+    .img1 { height: 32px; width: 32px; }
+    .left { font-size: 14px; }
+
+    .button1 { height: 30px; width: 30px; }
+    .question { font-size: 13px; }
+    .button2 { width: 120px; height: 40px; font-size: 13px; }
+
+    .loginimage { height: 150px; }
+    .login-content { left: 10%; top: 75px; }
+    .h2 { font-size: 16px; }
+    .button3 { height: 32px; width: 110px; font-size: 13px; margin-top: 8px; }
+
+    .h3 { font-size: 17px; padding-top: 20px; }
+    .language { width: 110px; height: 80px; }
+    .button4 { width: 100px; height: 36px; }
+
+    footer { font-size: 11px; }
+    .footerimg { height: 24px; width: 55px; }
+    .list ul { line-height: 24px; }
+    .line2 { flex-direction: column; }
+}

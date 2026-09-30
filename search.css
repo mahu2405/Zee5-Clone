@@ -1,0 +1,240 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+    padding-left: 30px;
+    width: 98%;
+}
+.row1{
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+}
+.search-box{
+  height: 15px;
+  width: 92%;
+  background: transparent;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding: 20px 20px;
+  border: 1px solid gray;
+  gap: 10px;
+}
+.search-box input{
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 16px;
+}
+.search-box i{
+  color: #8197a4;
+}
+.close-btn{
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  margin-left: 10px;
+}
+.arrow{
+    color: white;
+    font-size: 30px;
+    padding-left: 15px;
+    padding-top: 10px;
+}
+.up{
+    color: white;
+}
+.div1{
+    background-color: black;
+    border: 1px solid white;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    color: white;
+    padding-top: 5px;
+}
+.span1{
+    padding-left: 12px;
+}
+.row2{
+    display: grid;
+    grid-template-columns: repeat(16,1fr);
+    gap: 10px;
+    scrollbar-width: none;
+    overflow-x: scroll;
+    padding-top: 30px;
+}
+.heading{
+    color: gray;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+.row1-title{
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 40px;
+}
+.Row{
+    display: flex;
+    scroll-snap-type: x mandatory;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    gap: 30px;
+    perspective: 1200px;
+    padding-top: 150px;     
+    margin-top: -150px;     
+    padding-bottom: 20px;
+    margin-left: 30px;
+}
+.posterR1:hover img{
+    height: 360px;
+    width: 260px;
+    transform: translateY(-40px) scale(1);
+    z-index: 20;
+    border-radius: 20px;
+}
+.movielist{
+    display: flex;
+    gap: 20px;
+}
+.posterR1{
+  width: 200px;
+  height: 300px;
+  /* flex: 0 0 200px; */
+  color: white;
+  transition: width 0.4s ease;
+}
+.posterR1 img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  transition: height 0.4s ease;
+  /* margin-left: 35px; */
+}
+.img2{
+  display: none;
+}
+.details{
+   height: 350px;
+    width: 300px;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 5px;
+  transition:  0.4s ease, padding 0.4s ease;
+  background-color: black;
+}
+/* hover: everything grows naturally downward, no absolute/transform */
+.posterR1:hover{
+  width: 260px;
+}
+.posterR1:hover img{
+  height: 360px;
+}
+.posterR1:hover .img1{
+  display: none;
+}
+.posterR1:hover .img2{
+  display: block;
+}
+.posterR1:hover .details{
+  max-height: 150px;
+  padding: 10px 5px;
+}
+.posterR1 .img2{
+  display: none !important;
+}
+
+.posterR1:hover .img2{
+  display: block !important;
+}
+
+.posterR1 .img1{
+  display: block;
+}
+.play{
+    height: 40px;
+    width: 40px;
+}
+.share{
+    height: 40px;
+    width: 40px; 
+    border: none;
+}
+.section2{
+    margin-top:30px;
+}
+/* ---------------------------------------mediaquery------------------------------ */
+
+
+/* ---------- Tablets (<= 992px) ---------- */
+@media (max-width: 992px) {
+    body { padding-left: 20px; width: 100%; padding-right: 20px; }
+
+    .row1 { gap: 15px; }
+    .search-box { width: 100%; }
+
+    /* 16 columns fixed-a irundha romba chinnadhaa aagum, so auto width */
+    .row2 {
+        grid-template-columns: none;
+        grid-auto-flow: column;
+        grid-auto-columns: max-content;
+    }
+
+    .row1-title { padding: 25px 20px; }
+    .Row { gap: 15px; padding-left: 10px; }
+    .posterR1 { width: 160px; height: 250px; flex-shrink: 0; }
+    .posterR1 img { margin-left: 0; }
+    .posterR1:hover { width: 200px; }
+    .posterR1:hover img { height: 300px; width: 100%; }
+}
+
+/* ---------- Large phones (<= 768px) ---------- */
+@media (max-width: 768px) {
+    body { padding-left: 15px; padding-right: 15px; }
+
+    .row1 { margin-top: 20px; gap: 10px; align-items: center; }
+    .arrow { font-size: 24px; padding: 0 5px; }
+    .search-box { padding: 20px 12px; }
+    .search-box input { font-size: 14px; }
+
+    .div1 { width: 85px; font-size: 13px; flex-shrink: 0; }
+    .span1 { padding-left: 8px; }
+
+    .row2 { padding-top: 20px; gap: 8px; }
+    .heading { padding-left: 10px; font-size: 14px; }
+
+    .posterR1 { width: 130px; height: 210px; }
+    .posterR1:hover { width: 160px; }
+    .posterR1:hover img { height: 240px; transform: translateY(-20px); }
+
+    .section2 { margin-top: 20px; }
+}
+
+/* ---------- Phones (<= 576px) ---------- */
+@media (max-width: 576px) {
+    body { padding-left: 10px; padding-right: 10px; }
+
+    .arrow { font-size: 20px; }
+    .search-box input { font-size: 13px; }
+    .close-btn { font-size: 16px; margin-left: 5px; }
+
+    .div1 { width: 70px; font-size: 12px; }
+
+    .row1-title { padding: 15px; font-size: 16px; }
+    .posterR1 { width: 110px; height: 175px; }
+    /* mobile la hover illa, so grow effect off */
+    .posterR1:hover { width: 110px; }
+    .posterR1:hover img { height: 100%; transform: none; }
+    .posterR1:hover .details { max-height: 0; padding: 0; }
+}
